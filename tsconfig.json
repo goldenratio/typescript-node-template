@@ -5,10 +5,10 @@
       "ES2022",
       "dom"
     ],
-    "module": "ESNext",
+    "module": "NodeNext",
     "rootDir": "./src",
     "outDir": "./dist",
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     /* Type Checking */
