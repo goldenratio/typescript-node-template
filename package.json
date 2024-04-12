@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "tsx ./src/index.ts",
+    "prod": "npm run build && node ./dist/index.js",
     "build": "tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.12.7",
     "tsx": "^4.7.2",
     "typescript": "^5.4.5"
   },
