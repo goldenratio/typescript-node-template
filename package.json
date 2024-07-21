@@ -9,12 +9,12 @@
 	"type": "module",
 	"main": "dist/index.js",
 	"scripts": {
-		"dev": "NODE_ENV=development npm run build && node ./dist/index.js",
-		"prod": "NODE_ENV=production npm run build && node ./dist/index.js",
-		"build": "tsc",
+		"dev": "npm run tsc && NODE_ENV=development node ./dist/index.js",
+		"prod": "npm run check-code-style && npm run tsc && NODE_ENV=production node ./dist/index.js",
+		"tsc": "tsc",
 		"test": "node --import tsx --test ./src/**/*.test.ts",
-		"fix-code-style": "biome check --write .",
-		"check-code-style": "biome check ."
+		"fix-code-style": "biome check --write .src/*.*",
+		"check-code-style": "biome check src/*.*"
 	},
 	"author": "",
 	"devDependencies": {
