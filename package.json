@@ -13,8 +13,8 @@
 		"prod": "npm run check-code-style && npm run tsc && NODE_ENV=production node ./dist/index.js",
 		"tsc": "tsc",
 		"test": "npm run tsc && node --test ./dist/**/*.test.js",
-		"fix-code-style": "biome check --write .src/*.*",
-		"check-code-style": "biome check src/*.*"
+		"fmt": "biome check src/*.*",
+		"fix-fmt": "biome check --write .src/*.*"
 	},
 	"author": "",
 	"devDependencies": {
