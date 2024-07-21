@@ -1,25 +1,29 @@
 {
-  "name": "typescript-node-template",
-  "version": "1.0.0",
-  "description": "",
-  "engines": {
-    "node": ">=20.10.0",
-    "npm": ">=10.2.3"
-  },
-  "type": "module",
-  "main": "dist/index.js",
-  "scripts": {
-    "dev": "tsx ./src/index.ts",
-    "prod": "npm run build && node ./dist/index.js",
-    "build": "tsc"
-  },
-  "author": "",
-  "devDependencies": {
-    "@types/node": "^20.12.7",
-    "tsx": "^4.7.2",
-    "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.5"
-  }
+	"name": "typescript-node-template",
+	"version": "1.0.0",
+	"description": "",
+	"engines": {
+		"node": ">=20.10.0",
+		"npm": ">=10.2.3"
+	},
+	"type": "module",
+	"main": "dist/index.js",
+	"scripts": {
+		"dev": "NODE_ENV=development npm run build && node ./dist/index.js",
+		"prod": "NODE_ENV=production npm run build && node ./dist/index.js",
+		"build": "tsc",
+		"test": "node --import tsx --test ./src/**/*.test.ts",
+		"fix-code-style": "biome check --write .",
+		"check-code-style": "biome check ."
+	},
+	"author": "",
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/node": "^20.12.7",
+		"tsx": "^4.16.2",
+		"typescript": "^5.5.3"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.5"
+	}
 }
