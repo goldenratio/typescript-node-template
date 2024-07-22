@@ -10,11 +10,11 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"dev": "npm run tsc && NODE_ENV=development node --inspect ./dist/index.js",
-		"prod": "npm run check-fmt && npm run tsc && NODE_ENV=production node ./dist/index.js",
+		"prod": "npm run fmt:check && npm run tsc && NODE_ENV=production node ./dist/index.js",
 		"tsc": "tsc",
 		"test": "npm run tsc && node --test ./dist/**/*.test.js",
-		"fmt": "biome check --write ./src/**/*.*",
-		"check-fmt": "biome check ./src/**/*.*"
+		"fmt": "biome check --write .",
+		"fmt:check": "biome check ."
 	},
 	"author": "",
 	"devDependencies": {
