@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { add } from "./util.js";
 
 // env usage

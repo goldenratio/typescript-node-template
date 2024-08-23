@@ -1,28 +1,27 @@
 {
-	"name": "typescript-node-template",
-	"version": "1.0.0",
-	"description": "",
-	"engines": {
-		"node": ">=20.10.0",
-		"npm": ">=10.2.3"
-	},
-	"type": "module",
-	"main": "dist/index.js",
-	"scripts": {
-		"dev": "npm run tsc && NODE_ENV=development node --inspect ./dist/index.js",
-		"prod": "npm run fmt:check && npm run tsc && NODE_ENV=production node ./dist/index.js",
-		"tsc": "tsc",
-		"test": "npm run tsc && node --test ./dist/**/*.test.js",
-		"fmt": "biome check --write .",
-		"fmt:check": "biome check ."
-	},
-	"author": "",
-	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"@types/node": "^20.12.7",
-		"typescript": "^5.5.3"
-	},
-	"dependencies": {
-		"dotenv": "^16.4.5"
-	}
+  "name": "typescript-node-template",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=20.10.0",
+    "npm": ">=10.2.3"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npm run build && NODE_ENV=development node --inspect --env-file=.env.local-dev ./dist/app.js",
+    "prod": "npm run fmt:check && npm run build && NODE_ENV=production node --env-file=.env ./dist/app.js",
+    "tsx": "ENVIRONMENT=DEVELOPMENT npx tsx --inspect --env-file=.env.local-dev src/app.ts",
+    "build": "./pre-build.sh && tsc && ./post-build.sh",
+    "test": "npm run build && node --test ./dist/**/*.test.js",
+    "fmt": "biome check --write .",
+    "fmt:check": "biome check ."
+  },
+  "author": "",
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/node": "^20.12.7",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {}
 }
